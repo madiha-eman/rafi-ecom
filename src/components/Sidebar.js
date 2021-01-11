@@ -14,6 +14,7 @@ import IconButton from '@material-ui/core/IconButton';
 import { IconContext } from 'react-icons/lib';
 import InputBase from '@material-ui/core/InputBase';
 import Divider from '@material-ui/core/Divider';
+import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Drawer from '@material-ui/core/Drawer';
 import egg from './egg1.png'
@@ -36,11 +37,11 @@ const Nav = styled.div`
 `;
 
 const NavIcon = styled(Link)`
-  margin-left: 2rem;
+  margin-left: 1.5rem;
   font-size: 1.5rem;
   height: 20px;
   display: flex;
-  color: black;
+  color: #4c4c4c;
   justify-content: flex-start;
   align-items: center;
 `;
@@ -73,27 +74,27 @@ const useStyles = makeStyles((theme) => ({
     padding: '2px 4px',
     display: 'flex',
     alignItems: 'center',
-    width: 400,
-    marginLeft:'20px',
+    // width: 400,
+    // marginLeft:'20px',
     marginRight:'8px',
   },
   title1:{
     fontFamily: 'Satisfy, cursive',
     fontSize: '29px',
-    marginRight:'20px',
+    // marginRight:'20px',
     fontWeight: '600',
     display: 'none',
     color:'#191919',
     opacity:'0.8',
     cursor: 'pointer',
-    [theme.breakpoints.up('sm','md')]: {
+    [theme.breakpoints.up('sm')]: {
       display: 'block',
                                                        
     },
   },
   egg:{
     display: 'none',
-    marginLeft:25,
+    // marginLeft:25,
     [theme.breakpoints.up('sm','md')]: {
       display: 'block',
                                                        
@@ -101,7 +102,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title2:{
     display: 'none',
-    marginTop: '19px',
+  //  marginBottom: '19px',
     color:'#4c4c4c',
     fontSize: '15px',
     fontWeight: 'bold',
@@ -114,7 +115,7 @@ const useStyles = makeStyles((theme) => ({
   title3:{
     display: 'none',
     color:'#4c4c4c',
-    marginTop: '19px',
+    // marginBottom: '19px',
     fontSize: '16px',
     taxtAlign:'center',
     cursor: 'pointer',
@@ -127,7 +128,7 @@ const useStyles = makeStyles((theme) => ({
   title4:{
     display: 'none',
     color:'whitesmoke',
-    marginTop: '19px',
+    paddingTop: '14px',
     fontSize: '16px',
     cursor: 'pointer',
     taxtAlign:'center',
@@ -140,7 +141,7 @@ const useStyles = makeStyles((theme) => ({
 
   input: {
     marginLeft: theme.spacing(1),
-    marginRight:20,
+    // marginRight:6,
     flex: 1,
     [theme.breakpoints.up('md','sm')]: {
       width: '20ch',
@@ -149,9 +150,14 @@ const useStyles = makeStyles((theme) => ({
   iconButton: {
     padding: 6,
   },
-  divider: {
+  divider: { 
+    display:'none',
     height: 58,
     margin: 0,
+    [theme.breakpoints.up('sm','md')]: {
+      display: 'block',
+                                                       
+    },
    
   },
   divider1: {
@@ -203,16 +209,23 @@ const Sidebar = ({user}) => {
   return (
     <>
       <IconContext.Provider value={{ color: 'black' }}>
+        <Grid>
         <AppBar position="fixed">
         <Nav>
+          <Grid xs={1}>
           <NavIcon to='#'>
           <FaIcons.FaBars onClick={showSidebar} /> 
           </NavIcon>
+          </Grid>
+          <Grid xs={0}>
           <img className={classes.egg} src={egg} alt='egg' width='37px'/>
-
+          </Grid>
+          <Grid xs={2}>
           <Typography className={classes.title1}  variant="h4">
                Chaldal 
             </Typography>
+            </Grid>
+            <Grid xs={5}>
           <Paper component="form" className={classes.root2}>
           
       <InputBase
@@ -224,29 +237,36 @@ const Sidebar = ({user}) => {
           <SearchIcon /> 
       </IconButton>
          </Paper>
+         </Grid>
          <Divider className={classes.divider} orientation="vertical" />
+         <Grid xs={2}>
          <div className="help">
          <Typography className={classes.title2} variant="h6">
          <IoIcons.IoMdHelpCircle  className={classes.markicon}/>
              Help & More 
             </Typography>
             </div>
-          <Divider className={classes.divider} orientation="vertical" />
+            </Grid>
+            <Divider className={classes.divider} orientation="vertical" />
+            <Grid xs={2}>
           <div className='lang'>
           <Typography className={classes.title3} variant="h6">
              <span className='eng'> EN </span> | বাং 
              
             </Typography>
             </div>
-          <Divider className={classes.divider} orientation="vertical" />
+            </Grid>
+            <Divider className={classes.divider} orientation="vertical" />
+            <Grid xs={2}>
           <div className="div-signin">
           <Typography className={classes.title4} variant="h6">
              Sign In
             </Typography>
             </div>
+            </Grid>
         </Nav>
         </AppBar>
-        
+        </Grid>
         <SidebarNav sidebar={sidebar} position='permanent'  variant="persistent"> 
           <SidebarWrap>
         

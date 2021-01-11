@@ -7,10 +7,9 @@ const Home = ( {user} ) => {
     return (
         <div>
              <Sidebar user={user}/> <br />
-             <Footer2 />
              <Products/>
-             
-          
+             <Footer2 />
+
         </div>
     )
 }

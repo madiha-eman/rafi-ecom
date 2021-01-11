@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react'
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-
+import { motion } from 'framer-motion'
 import { useDispatch} from 'react-redux'
 import { ProductsContext } from '../global/ProductsContext'
  import { CartContext } from '../global/CartContext'
@@ -24,14 +24,14 @@ drawerHeader: {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
-    marginLeft: -10,
+    marginLeft: 10,
   },
   contentShift: {
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen,
     }),
-    marginLeft: 240,
+    marginLeft: -240,
   },
 }));
 export const Products = () => {
@@ -57,10 +57,14 @@ export const Products = () => {
             <div className='products-container'>
                 {products.length === 0 && <div>slow internet...no products to display</div>}
                 {products.map(product => (
-                    <div className='product-card' key={product.ProductID}>
-                        <div className='product-img'>
-                            <img src={product.ProductImg} alt="not found" />
-                        </div>
+                    <motion.div className='product-card' key={product.ProductID}>
+                        <motion.div className='product-img' whileHover={{opacity: 0.5}}>
+                            <motion.img src={product.ProductImg} alt="not found" 
+                              initial={{opacity: 0}}
+                              animate={{opacity: 1 }}
+                              transition={{delay: 2 }}
+                              transition={{duration: 5 }}/>
+                        </motion.div>
                         <div className='product-name'>
                             {product.ProductName}
                         </div>
@@ -68,7 +72,7 @@ export const Products = () => {
                             Rs {product.ProductPrice}.00
                     </div>
                         <button className='addcart-btn'>ADD TO CART</button>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
             </Typography>

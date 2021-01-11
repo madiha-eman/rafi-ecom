@@ -7,11 +7,11 @@ const SidebarLink = styled(Link)`
   color: #4c4c4c;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 12px;
   list-style: none;
-  height: 35px;
+  height: 32px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 14px;
 
   &:hover {
     background-image: linear-gradient(to right, white, grey);

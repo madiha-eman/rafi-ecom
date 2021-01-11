@@ -1,14 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Satisfy&display=swap');
 
 .div-signin{
-    box-sizing: content-box;
+    /* box-sizing: content-box; */
     background-color:#ee496a;     
     height: 58px;
-    width: 155px;
+    /* width: 155px; */
     text-align: center;
     margin: 0;
 }
-@media screen 
+@media screen and (max-width: 600px){
+    .div-signin{
+        display: none;
+    }
+}
 
 /* .sign-in{
         display: flex;
@@ -17,12 +21,12 @@
         font-weight: bold!important;
         color:#4c4c4c!important;
    
-    } */
+    }
    
     .title{
         font-family: 'Lobster', cursive;
         color:rgb(73, 69, 69);
-    }
+    }  */
     .eng{
         color: red;
         padding-right: 1px;
@@ -30,16 +34,23 @@
     }
     .help{
         background-image: linear-gradient(to right white, grey);
-        box-sizing: content-box;
-        height: 58px;
-        width: 130px;
+        /* box-sizing: content-box; */
+        /* height: 58px; */
+        /* width: 130px; */
+        /* margin-bottom: 50px; */
         text-align: center;
         margin: 0;
     }
     .lang{
         box-sizing: content-box;
-        height: 58px;
-        width: 120px;
+        /* height: 58px; */
+        /* margin-bottom: 4px !important; */
+        /* width: 120px; */
         text-align: center;
         margin: 0;
-    }
+}
+.foot{
+    background-color: rgb(214, 210, 210);
+    padding: 2px;
+    padding-left: 8px;
+}
