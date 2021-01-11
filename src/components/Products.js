@@ -1,11 +1,11 @@
-import React, { useState, useContext } from 'react'
-import clsx from 'clsx';
+import React, { useContext } from 'react'
+// import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import { motion } from 'framer-motion'
-import { useDispatch} from 'react-redux'
+// import { useDispatch} from 'react-redux'
 import { ProductsContext } from '../global/ProductsContext'
- import { CartContext } from '../global/CartContext'
+//  import { CartContext } from '../global/CartContext'
 import '../css/Home.css'
 
 const useStyles = makeStyles((theme) => ({
@@ -38,20 +38,20 @@ export const Products = () => {
 
     const { products } = useContext(ProductsContext);
     const classes = useStyles();
-    const [sidebar, setSidebar] = useState(false);
+    // const [sidebar, setSidebar] = useState(false);
   
-    const showSidebar = () => setSidebar(!sidebar);
+    // const showSidebar = () => setSidebar(!sidebar);
 
    //const { dispatch } = useContext(CartContext);
 
     return (
         <>
             {/* {products.length !== 0 && <h1>Products</h1>} */}
-            <main
+            {/* <main
         className={clsx(classes.content, {
-          [classes.contentShift]: sidebar,
+          [classes.contentShift]: side,
         })}
-      >
+      > */}
         <div className={classes.drawerHeader} />
         <Typography paragraph>
             <div className='products-container'>
@@ -62,7 +62,6 @@ export const Products = () => {
                             <motion.img src={product.ProductImg} alt="not found" 
                               initial={{opacity: 0}}
                               animate={{opacity: 1 }}
-                              transition={{delay: 2 }}
                               transition={{duration: 5 }}/>
                         </motion.div>
                         <div className='product-name'>
@@ -77,7 +76,7 @@ export const Products = () => {
             </div>
             </Typography>
      
-    </main> 
+    {/* </main>  */}
         </>
     )
 }

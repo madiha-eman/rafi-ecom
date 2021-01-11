@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import './App.css';
-import Sidebar from './components/Sidebar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Overview from './pages/Overview';
 import { auth, db } from './config/Config'

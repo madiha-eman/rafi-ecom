@@ -2,7 +2,6 @@ import React from 'react'
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import {Container, Table} from 'react-bootstrap'
 import '../App.css'
 
 
@@ -101,11 +100,11 @@ const Footer2=()=>{
              </Typography>
         </Grid>
         <Grid xs={2}>
-        <img src='https://cdn.chaldal.net/asset/Egg.Grocery.Fabric/Egg.Grocery.Web/1.5.0+Release-1638/Default/components/shared/NewFooter/images/Amex.png?q=low&webp=1&alpha=1'  width='25px' height='25px'/>
-        <img src='https://cdn.chaldal.net/asset/Egg.Grocery.Fabric/Egg.Grocery.Web/1.5.0+Release-1638/Default/components/shared/NewFooter/images/mastercard.png?q=low&webp=1&alpha=1'  width='25px' height='25px'/>
-        <img src='https://cdn.chaldal.net/asset/Egg.Grocery.Fabric/Egg.Grocery.Web/1.5.0+Release-1638/Default/components/shared/NewFooter/images/VIsa.png?q=low&webp=1&alpha=1' width= '25px' height='25px'/>
-        <img src='https://cdn.chaldal.net/asset/Egg.Grocery.Fabric/Egg.Grocery.Web/1.5.0+Release-1638/Default/components/shared/NewFooter/images/bkash.png?v=1&q=low&webp=1&alpha=1' width= '25px' height='25px'/>
-        <img src='https://cdn.chaldal.net/asset/Egg.Grocery.Fabric/Egg.Grocery.Web/1.5.0+Release-1638/Default/components/shared/NewFooter/images/COD.png?v=1&q=low&webp=1&alpha=1' width= '25px' height='25px'/>
+        <img src='https://cdn.chaldal.net/asset/Egg.Grocery.Fabric/Egg.Grocery.Web/1.5.0+Release-1638/Default/components/shared/NewFooter/images/Amex.png?q=low&webp=1&alpha=1'  width='25px' height='25px' alt='icon1'/>
+        <img src='https://cdn.chaldal.net/asset/Egg.Grocery.Fabric/Egg.Grocery.Web/1.5.0+Release-1638/Default/components/shared/NewFooter/images/mastercard.png?q=low&webp=1&alpha=1'  width='25px' height='25px' alt='icon2'/>
+        <img src='https://cdn.chaldal.net/asset/Egg.Grocery.Fabric/Egg.Grocery.Web/1.5.0+Release-1638/Default/components/shared/NewFooter/images/VIsa.png?q=low&webp=1&alpha=1' width= '25px' height='25px' alt='icon3'/>
+        <img src='https://cdn.chaldal.net/asset/Egg.Grocery.Fabric/Egg.Grocery.Web/1.5.0+Release-1638/Default/components/shared/NewFooter/images/bkash.png?v=1&q=low&webp=1&alpha=1' width= '25px' height='25px' alt='icon4'/>
+        <img src='https://cdn.chaldal.net/asset/Egg.Grocery.Fabric/Egg.Grocery.Web/1.5.0+Release-1638/Default/components/shared/NewFooter/images/COD.png?v=1&q=low&webp=1&alpha=1' width= '25px' height='25px' alt='icon5'/>
         </Grid>
         </Grid>
 
@@ -167,16 +166,16 @@ const Footer2=()=>{
        
         </Grid>
       <Grid xs={2} >         
-      <img className={classes.google} src='https://cdn.chaldal.net/asset/Egg.Grocery.Fabric/Egg.Grocery.Web/1.5.0+Release-1638/Default/components/shared/NewFooter/images/google_play_store.png?q=low&webp=1&alpha=1'/>
-      <img className={classes.google} src='https://cdn.chaldal.net/asset/Egg.Grocery.Fabric/Egg.Grocery.Web/1.5.0+Release-1638/Default/components/shared/NewFooter/images/app_store.png?q=low&webp=1&alpha=1'/> 
+      <img className={classes.google} src='https://cdn.chaldal.net/asset/Egg.Grocery.Fabric/Egg.Grocery.Web/1.5.0+Release-1638/Default/components/shared/NewFooter/images/google_play_store.png?q=low&webp=1&alpha=1' alt='play1'/>
+      <img className={classes.google} src='https://cdn.chaldal.net/asset/Egg.Grocery.Fabric/Egg.Grocery.Web/1.5.0+Release-1638/Default/components/shared/NewFooter/images/app_store.png?q=low&webp=1&alpha=1' alt='play-app'/> 
       
          </Grid>
         </Grid>
         <Grid conatiner className={classes.mainSocial} sm={12} xs={12}>
-        <a href='https://www.facebook.com/'><img className={classes.social} src=' https://cdn.chaldal.net/asset/Egg.Grocery.Fabric/Egg.Grocery.Web/1.5.0+Release-1638/Default/components/shared/NewFooter/images/Facebook.png?q=low&webp=1&alpha=1 '/></a>
-      <a href='https://www.youtube.com/'> <img className={classes.social} src='https://cdn.chaldal.net/asset/Egg.Grocery.Fabric/Egg.Grocery.Web/1.5.0+Release-1638/Default/components/shared/NewFooter/images/Youtube.png?q=low&webp=1&alpha=1'/></a> 
-      <a href='https://twitter.com/'> <img className={classes.social} src='https://cdn.chaldal.net/asset/Egg.Grocery.Fabric/Egg.Grocery.Web/1.5.0+Release-1638/Default/components/shared/NewFooter/images/twitter.png?q=low&webp=1&alpha=1' /></a> 
-      <a href='https://www.instagram.com/'><img className={classes.social} src='https://cdn.chaldal.net/asset/Egg.Grocery.Fabric/Egg.Grocery.Web/1.5.0+Release-1638/Default/components/shared/NewFooter/images/Instagram.png?q=low&webp=1&alpha=1'/></a>
+        <a href='https://www.facebook.com/'><img className={classes.social} src=' https://cdn.chaldal.net/asset/Egg.Grocery.Fabric/Egg.Grocery.Web/1.5.0+Release-1638/Default/components/shared/NewFooter/images/Facebook.png?q=low&webp=1&alpha=1' alt='fb'/></a>
+      <a href='https://www.youtube.com/'> <img className={classes.social} src='https://cdn.chaldal.net/asset/Egg.Grocery.Fabric/Egg.Grocery.Web/1.5.0+Release-1638/Default/components/shared/NewFooter/images/Youtube.png?q=low&webp=1&alpha=1' alt='youtube'/></a> 
+      <a href='https://twitter.com/'> <img className={classes.social} src='https://cdn.chaldal.net/asset/Egg.Grocery.Fabric/Egg.Grocery.Web/1.5.0+Release-1638/Default/components/shared/NewFooter/images/twitter.png?q=low&webp=1&alpha=1' alt='twitter'/></a> 
+      <a href='https://www.instagram.com/'><img className={classes.social} src='https://cdn.chaldal.net/asset/Egg.Grocery.Fabric/Egg.Grocery.Web/1.5.0+Release-1638/Default/components/shared/NewFooter/images/Instagram.png?q=low&webp=1&alpha=1' alt='insta'/></a>
         </Grid>
  </div>
  </Grid>

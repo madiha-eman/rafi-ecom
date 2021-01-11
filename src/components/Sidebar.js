@@ -1,11 +1,11 @@
-import React, { useState, useContext } from 'react';
-import clsx from 'clsx';
+import React, { useState } from 'react';
+// import clsx from 'clsx';
 import './style.css'
 import { makeStyles } from '@material-ui/core/styles';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import * as FaIcons from 'react-icons/fa';
-import * as AiIcons from 'react-icons/ai';
+// import * as AiIcons from 'react-icons/ai';
 import { SidebarData } from './SidebarData';
 import SubMenu from './SubMenu';
 import * as IoIcons from 'react-icons/io';
@@ -16,17 +16,17 @@ import InputBase from '@material-ui/core/InputBase';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import Drawer from '@material-ui/core/Drawer';
+// import Drawer from '@material-ui/core/Drawer';
 import egg from './egg1.png'
 import SearchIcon from '@material-ui/icons/Search';
 import Paper from '@material-ui/core/Paper';
-import Home from './Home'
-import { auth } from '../config/Config'
-import { Icon } from 'react-icons-kit'
-import { cart } from 'react-icons-kit/entypo/cart'
-import { useHistory } from 'react-router-dom'
-import { CartContext } from '../global/CartContext'
-import {createContext} from 'react'
+// import Home from './Home'
+// import { auth } from '../config/Config'
+// import { Icon } from 'react-icons-kit'
+// import { cart } from 'react-icons-kit/entypo/cart'
+// import { useHistory } from 'react-router-dom'
+// import { CartContext } from '../global/CartContext'
+// import {createContext} from 'react'
 
 const Nav = styled.div`
   background: #ffc40c;
@@ -65,7 +65,7 @@ const SidebarWrap = styled.div`
   width: 100%;
 
 `;
-const drawerWidth = 180;
+// const drawerWidth = 180;
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
