@@ -2,6 +2,8 @@ import React from 'react'
 import Sidebar from './Sidebar'
 import Footer2 from './Footer2'
 import { Products } from './Products'
+import btnCart from './btnCart'
+import SimpleModal from './btnCart'
 
 const Home = ( {user} ) => {
     return (
@@ -9,6 +11,7 @@ const Home = ( {user} ) => {
              <Sidebar user={user}/> <br />
              <Products/>
              <Footer2 />
+             <SimpleModal/>
 
         </div>
     )
