@@ -59,7 +59,7 @@ const SidebarNav = styled.nav`
   justify-content: center;
   position: fixed;
   position: absolute;
-  top: 58px;
+  top: 54px;
   left: ${({ sidebar }) => (sidebar ? 'fixed' :  '-100%')};
   transition: 350ms;
   z-index: 10;
@@ -182,7 +182,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'flex-end',
   },
   content: {
-    flexGrow: 2,
+    flexGrow: 8,
     padding: theme.spacing(3),
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.sharp,
@@ -195,7 +195,7 @@ const useStyles = makeStyles((theme) => ({
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen,
     }),
-    marginLeft: 230,
+    marginLeft: 224,
   },
 }));
 const Sidebar = ({user}) => {
@@ -273,7 +273,7 @@ const Sidebar = ({user}) => {
         </Nav>
         </AppBar>
         </Grid>
-        <SidebarNav position="fixed" sidebar={sidebar} position='permanent'  variant="persistent"> 
+        <SidebarNav sidebar={sidebar} position='permanent'  variant="persistent"> 
           <SidebarWrap>
         
             <NavIcon position='permanent'  variant="permanent" to='#' onClick={showSidebar}>
@@ -294,6 +294,7 @@ const Sidebar = ({user}) => {
         <div className={classes.drawerHeader} />
         <Typography paragraph>
           <Products/>
+          <Footer2 />
         </Typography>
      
       </main>

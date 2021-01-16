@@ -1,14 +1,14 @@
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
 import Modal from '@material-ui/core/Modal';
 import { Typography } from "@material-ui/core";
 import  Signin from "./Signin";
 
 
-function rand() {
-    return Math.round(Math.random() * 0) - 0;
-}
+// function rand() {
+//     return Math.round(Math.random() * 0) - 0;
+// }
 
 function getModalStyle() {
     const top = 50

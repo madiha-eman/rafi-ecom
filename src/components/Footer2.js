@@ -1,17 +1,21 @@
-import React,{useState} from 'react'
-import clsx from 'clsx';
+import React from 'react'
+// import clsx from 'clsx';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import '../App.css'
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
 
 
 
 const useStyles = makeStyles((theme) => ({
+  root:{
+    margin:"0 auto",
+    padding:0,
+  },
  title:{
-   fontSize: '10px',
+   fontSize: '8px',
    [theme.breakpoints.up('sm','md')]: {
     fontSize: '14px',
                                                      
@@ -20,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
  title3:{
   fontSize: '12px',
   fontWeight: 'bold',
-  [theme.breakpoints.up('sm')]: {
+  [theme.breakpoints.up('sm','md')]: {
     fontSize: '18px',
                                                      
   },
@@ -28,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
 title4:{
   fontSize: '10px',
   fontWeight: 'bold',
-  [theme.breakpoints.up('sm')]: {
+  [theme.breakpoints.up('sm','md')]: {
     fontSize: '14px',
                                                      
   },
@@ -41,7 +45,7 @@ google:{
   width: '48px',
   height: '30px',
   margin: 4,
-  [theme.breakpoints.up('sm')]: {
+  [theme.breakpoints.up('sm','md')]: {
     width: '75px',
     height: '34px',
                                                      
@@ -55,56 +59,55 @@ social:{
 },
 mainSocial:{
   textAlign:'center',
-  justify: 'center',
-  alignItems: 'center'
+ 
 },
 foot1:{
   boxShadow:'10px 10px 10px 0 grey',
   paddingTop:10,
 },
 foot2:{
-  paddingTop:'20px',
+  marginTop:'20px',
 },
-drawerHeader: {
-  display: 'flex',
-  alignItems: 'center',
-  padding: theme.spacing(0, 1),
-  // necessary for content to be below app bar
-  ...theme.mixins.toolbar,
-  justifyContent: 'flex-end',
-},
-content: {
-  flexGrow: 8,
-  padding: theme.spacing(0, 1),
-  transition: theme.transitions.create('margin', {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-  }),
-  marginLeft: -10,
-},
-contentShift: {
-  transition: theme.transitions.create('margin', {
-    easing: theme.transitions.easing.easeOut,
-    duration: theme.transitions.duration.enteringScreen,
-  }),
-  marginLeft: 0,
-},
+// drawerHeader: {
+//   display: 'flex',
+//   alignItems: 'center',
+//   padding: theme.spacing(0, 1),
+//   // necessary for content to be below app bar
+//   ...theme.mixins.toolbar,
+//   justifyContent: 'flex-end',
+// },
+// content: {
+//   flexGrow: 8,
+//   padding: theme.spacing(0, 1),
+//   transition: theme.transitions.create('margin', {
+//     easing: theme.transitions.easing.sharp,
+//     duration: theme.transitions.duration.leavingScreen,
+//   }),
+//   marginLeft: -10,
+// },
+// contentShift: {
+//   transition: theme.transitions.create('margin', {
+//     easing: theme.transitions.easing.easeOut,
+//     duration: theme.transitions.duration.enteringScreen,
+//   }),
+//   marginLeft: 0,
+// },
 }));
 
 const Footer2=()=>{
   const classes = useStyles();
-   const [sidebar, setSidebar] = useState(false);
+  //  const [sidebar, setSidebar] = useState(false);
   
-     const showSidebar = () => setSidebar(!sidebar);
+  //    const showSidebar = () => setSidebar(!sidebar);
 
 
     return (
-           <main
-        className={clsx(classes.content, {
-          [classes.contentShift]: sidebar,
-        })}
-      > 
-      <Grid>
+      //      <main
+      //   className={clsx(classes.content, {
+      //     [classes.contentShift]: sidebar,
+      //   })}
+      // > 
+      <Grid className={classes.root}>
         <div className='foot'>
        <Grid className={classes.foot1} container direction="row">
         
@@ -171,7 +174,7 @@ const Footer2=()=>{
         </Grid>
         </Grid>
 
-        <Grid xs={3} >
+        <Grid xs={3}>
         <Grid xs={1} sm={12}>
         <Typography className={classes.title4} varient="4">
             About Chaldal
@@ -189,7 +192,7 @@ const Footer2=()=>{
         </Grid>
         </Grid>
 
-        <Grid xs={2}>
+        <Grid xs={2} >
         <Grid xs={1} sm={12}>
         <Typography className={classes.title4} varient="4">
             For Bussiness
@@ -216,8 +219,7 @@ const Footer2=()=>{
         </Grid>
  </div>
  </Grid>
-
- </main>
+//  </main>
     )
 }
 

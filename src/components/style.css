@@ -14,10 +14,6 @@
         display: none;
     }
 }
-.div-signin:active{
-   width: 120%!important;
-
-}
 .button3{
     height: 56px !important;
     width: 356px !important;
@@ -107,6 +103,6 @@ h2{
     /* footer css */
 .foot{
     background-color: rgb(214, 210, 210);
-    padding: 2px;
+    /* padding: 2px; */
     padding-left: 8px;
 }
