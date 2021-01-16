@@ -4,14 +4,15 @@ import Footer2 from './Footer2'
 import { Products } from './Products'
 import btnCart from './btnCart'
 import SimpleModal from './btnCart'
+import { Cart } from './Cart'
 
 const Home = ( {user} ) => {
     return (
         <div>
              <Sidebar user={user}/> <br />
-             <Products/>
+             {/* <Products/> */}
              <Footer2 />
-             <SimpleModal/>
+             {/* <SimpleModal/> */}
 
         </div>
     )

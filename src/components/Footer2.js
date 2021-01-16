@@ -1,8 +1,12 @@
-import React from 'react'
+import React,{useState} from 'react'
+import clsx from 'clsx';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import '../App.css'
+import styled from 'styled-components';
+
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -60,13 +64,46 @@ foot1:{
 },
 foot2:{
   paddingTop:'20px',
-}
+},
+drawerHeader: {
+  display: 'flex',
+  alignItems: 'center',
+  padding: theme.spacing(0, 1),
+  // necessary for content to be below app bar
+  ...theme.mixins.toolbar,
+  justifyContent: 'flex-end',
+},
+content: {
+  flexGrow: 8,
+  padding: theme.spacing(0, 1),
+  transition: theme.transitions.create('margin', {
+    easing: theme.transitions.easing.sharp,
+    duration: theme.transitions.duration.leavingScreen,
+  }),
+  marginLeft: -10,
+},
+contentShift: {
+  transition: theme.transitions.create('margin', {
+    easing: theme.transitions.easing.easeOut,
+    duration: theme.transitions.duration.enteringScreen,
+  }),
+  marginLeft: 0,
+},
 }));
 
 const Footer2=()=>{
   const classes = useStyles();
+   const [sidebar, setSidebar] = useState(false);
+  
+     const showSidebar = () => setSidebar(!sidebar);
+
 
     return (
+           <main
+        className={clsx(classes.content, {
+          [classes.contentShift]: sidebar,
+        })}
+      > 
       <Grid>
         <div className='foot'>
        <Grid className={classes.foot1} container direction="row">
@@ -179,6 +216,8 @@ const Footer2=()=>{
         </Grid>
  </div>
  </Grid>
+
+ </main>
     )
 }
 

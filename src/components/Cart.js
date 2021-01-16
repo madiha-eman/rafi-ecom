@@ -1,6 +1,5 @@
 import React, { useContext, useEffect } from 'react'
 import { CartContext } from '../global/CartContext'
-import { Navbar } from './Navbar';
 import { Icon } from 'react-icons-kit'
 import { ic_add } from 'react-icons-kit/md/ic_add'
 import { ic_remove } from 'react-icons-kit/md/ic_remove'
@@ -8,31 +7,79 @@ import { iosTrashOutline } from 'react-icons-kit/ionicons/iosTrashOutline'
 import { Link } from 'react-router-dom'
 import { useHistory } from 'react-router-dom'
 import { auth } from '../config/Config'
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import Modal from '@material-ui/core/Modal';
 
+function rand() {
+    return Math.round(Math.random() * 20) - 10;
+}
+function getModalStyle() {
+    const top = 50 + rand();
+    const left = 50 + rand();
+    return {
+        top: `${top}%`,
+        left: `${left}%`,
+        transform: `translate(-${top}%, -${left}%)`,
+    };
+}
+const useStyles = makeStyles(theme => ({
+    modal: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    paper: {
+        position: 'absolute',
+        width: 800,
+        backgroundColor: theme.palette.background.paper,
+        boxShadow: theme.shadows[5],
+        padding: theme.spacing(2, 4, 3),
+    },
+}));
 export const Cart = ({ user }) => {
+    const classes = useStyles();
+    const [modalStyle] = React.useState(getModalStyle);
+    const [open, setOpen] = React.useState(false);
 
-    const { shoppingCart, dispatch, totalPrice, totalQty } = useContext(CartContext);
+    const handleOpen = () => {
+        setOpen(true);
+    };
 
-    const history = useHistory();
+    const handleClose = () => {
+        setOpen(false);
+    };
 
-    useEffect(() => {
-        auth.onAuthStateChanged(user => {
-            if (!user) {
-                history.push('/login');
-            }
-        })
-    })
+    // const { shoppingCart, dispatch, totalPrice, totalQty } = useContext(CartContext);
+
+    // const history = useHistory();
+
+    // useEffect(() => {
+    //     auth.onAuthStateChanged(user => {
+    //         if (!user) {
+    //             history.push('/login');
+    //         }
+    //     })
+    // })
 
     return (
         <>
-            <Navbar user={user} />
-            <>
+        <Button variant="contained" color="primary" onClick={handleOpen}>
+                Open Modal
+            </Button>
+            <Modal
+                aria-labelledby="simple-modal-title"
+                aria-describedby="simple-modal-description"
+                open={open}
+                onClose={handleClose}
+            >
+                <div style={modalStyle} className={classes.paper}>
+                {/* <>
                 {shoppingCart.length !== 0 && <h1>Cart</h1>}
                 <div className='cart-container'>
                     {
                         shoppingCart.length === 0 && <>
                             <div>no items in your cart or slow internet causing trouble (Refresh the page) or you are not logged in</div>
-                            <div><Link to="/">Return to Home page</Link></div>
                         </>
                     }
                     {shoppingCart && shoppingCart.map(cart => (
@@ -85,7 +132,10 @@ export const Cart = ({ user }) => {
                         </Link>
                     </div>}
                 </div>
-            </>
+            </> */}
+                </div>
+                </Modal>
+          
         </>
     )
 }

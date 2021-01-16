@@ -2,14 +2,17 @@ import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Modal from '@material-ui/core/Modal';
+import { Typography } from "@material-ui/core";
+import  Signin from "./Signin";
+
 
 function rand() {
-    return Math.round(Math.random() * 20) - 10;
+    return Math.round(Math.random() * 0) - 0;
 }
 
 function getModalStyle() {
-    const top = 50 + rand();
-    const left = 50 + rand();
+    const top = 50
+    const left = 50;
     return {
         top: `${top}%`,
         left: `${left}%`,
@@ -25,11 +28,25 @@ const useStyles = makeStyles(theme => ({
     },
     paper: {
         position: 'absolute',
-        width: 450,
+        width: 420,
         backgroundColor: theme.palette.background.paper,
-        boxShadow: theme.shadows[5],
-        padding: theme.spacing(2, 4, 3),
+        boxShadow: theme.shadows[3],
+        padding: theme.spacing(3, 3, 6),
     },
+    title4:{
+        display: 'none',
+        color:'whitesmoke',
+        paddingTop: '16px',
+        fontSize: '16px',
+        cursor: 'pointer',
+        taxtAlign:'center',
+        fontWeight: 'bold',
+        [theme.breakpoints.up('sm','md')]: {
+          display: 'block',
+                                                           
+        },
+      },
+                                    
 }));
 
 export default function SimpleModal() {
@@ -47,9 +64,9 @@ export default function SimpleModal() {
 
     return (
         <div>
-            <Button variant="contained" color="primary" onClick={handleOpen}>
-                Open Modal
-            </Button>
+            <Typography className={classes.title4}  onClick={handleOpen}>
+                Sign in
+            </Typography>
 
             <Modal
                 aria-labelledby="simple-modal-title"
@@ -58,10 +75,8 @@ export default function SimpleModal() {
                 onClose={handleClose}
             >
                 <div style={modalStyle} className={classes.paper}>
-                    <h2>Simple React Modal</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi accumsan odio enim, non pharetra est ultrices et.
-                    </p>
+                    <h2>Login</h2>
+                   <Signin/>
                 </div>
             </Modal>
         </div>

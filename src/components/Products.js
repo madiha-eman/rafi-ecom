@@ -1,5 +1,5 @@
-import React, { useContext } from 'react'
-// import clsx from 'clsx';
+import React, { useState, useContext } from 'react'
+import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import { motion } from 'framer-motion'
@@ -24,14 +24,14 @@ drawerHeader: {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
-    marginLeft: 10,
+    marginLeft: -10,
   },
   contentShift: {
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen,
     }),
-    marginLeft: -240,
+    marginLeft: 0,
   },
 }));
 export const Products = () => {
@@ -46,13 +46,13 @@ export const Products = () => {
 
     return (
         <>
-            {/* {products.length !== 0 && <h1>Products</h1>} */}
+            {/* {products.length !== 0 && <h1>Products</h1>}  */}
             {/* <main
         className={clsx(classes.content, {
-          [classes.contentShift]: side,
+          [classes.contentShift]: sidebar,
         })}
       > */}
-        <div className={classes.drawerHeader} />
+        {/* <div className={classes.drawerHeader} /> */}
         <Typography paragraph>
             <div className='products-container'>
                 {products.length === 0 && <div>slow internet...no products to display</div>}
@@ -76,7 +76,7 @@ export const Products = () => {
             </div>
             </Typography>
      
-    {/* </main>  */}
+     {/* </main>  */}
         </>
     )
 }

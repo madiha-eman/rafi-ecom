@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import clsx from 'clsx';
+ import clsx from 'clsx';
 import './style.css'
 import { makeStyles } from '@material-ui/core/styles';
 import styled from 'styled-components';
@@ -20,6 +20,9 @@ import Typography from '@material-ui/core/Typography';
 import egg from './egg1.png'
 import SearchIcon from '@material-ui/icons/Search';
 import Paper from '@material-ui/core/Paper';
+import { Products } from './Products';
+import SimpleModal from './btnCart';
+import Footer2 from './Footer2';
 // import Home from './Home'
 // import { auth } from '../config/Config'
 // import { Icon } from 'react-icons-kit'
@@ -49,6 +52,7 @@ const NavIcon = styled(Link)`
 
 const SidebarNav = styled.nav`
   background: white;
+  height: 100%;
   border-right: 1px solid grey;
   width: 250px;
   display: flex;
@@ -56,13 +60,17 @@ const SidebarNav = styled.nav`
   position: fixed;
   position: absolute;
   top: 58px;
-  left: ${({ sidebar }) => (sidebar ? '0' : '-100%')};
+  left: ${({ sidebar }) => (sidebar ? 'fixed' :  '-100%')};
   transition: 350ms;
   z-index: 10;
+  padding: 0 19px;
+  position: ${({ sidebar }) => (sidebar ? 'fixed' :  '-100%')};  
+
 `;
 
 const SidebarWrap = styled.div`
   width: 100%;
+  position:sticky;  
 
 `;
 // const drawerWidth = 180;
@@ -128,7 +136,6 @@ const useStyles = makeStyles((theme) => ({
   title4:{
     display: 'none',
     color:'whitesmoke',
-    paddingTop: '14px',
     fontSize: '16px',
     cursor: 'pointer',
     taxtAlign:'center',
@@ -175,20 +182,20 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'flex-end',
   },
   content: {
-    flexGrow: 8,
+    flexGrow: 2,
     padding: theme.spacing(3),
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
-    marginLeft: -10,
+    marginLeft: 0,
   },
   contentShift: {
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen,
     }),
-    marginLeft: 240,
+    marginLeft: 230,
   },
 }));
 const Sidebar = ({user}) => {
@@ -210,7 +217,7 @@ const Sidebar = ({user}) => {
     <>
       <IconContext.Provider value={{ color: 'black' }}>
         <Grid>
-        <AppBar position="fixed">
+        <AppBar position="fixed" color="#ee496a">
         <Nav>
           <Grid xs={1}>
           <NavIcon to='#'>
@@ -259,15 +266,14 @@ const Sidebar = ({user}) => {
             <Divider className={classes.divider} orientation="vertical" />
             <Grid xs={2}>
           <div className="div-signin">
-          <Typography className={classes.title4} variant="h6">
-             Sign In
-            </Typography>
+             <SimpleModal
+             />
             </div>
             </Grid>
         </Nav>
         </AppBar>
         </Grid>
-        <SidebarNav sidebar={sidebar} position='permanent'  variant="persistent"> 
+        <SidebarNav position="fixed" sidebar={sidebar} position='permanent'  variant="persistent"> 
           <SidebarWrap>
         
             <NavIcon position='permanent'  variant="permanent" to='#' onClick={showSidebar}>
@@ -280,17 +286,17 @@ const Sidebar = ({user}) => {
         </SidebarNav>
         
       </IconContext.Provider>
-      {/* <main
+      <main
         className={clsx(classes.content, {
           [classes.contentShift]: sidebar,
         })}
       >
         <div className={classes.drawerHeader} />
         <Typography paragraph>
-          home
+          <Products/>
         </Typography>
      
-      </main> */}
+      </main>
 
    
     </>
