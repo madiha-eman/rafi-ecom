@@ -57,21 +57,26 @@ export const Products = () => {
             <div className='products-container'>
                 {products.length === 0 && <div>slow internet...no products to display</div>}
                 {products.map(product => (
-                    <motion.div className='product-card' key={product.ProductID}>
-                        <motion.div className='product-img' whileHover={{opacity: 0.5}}>
+                    <div className='product-card' key={product.ProductID}>
+                        <div className="product-hvr">
+                        <div className='product-img'>
                             <motion.img src={product.ProductImg} alt="not found" 
                               initial={{opacity: 0}}
                               animate={{opacity: 1 }}
                               transition={{duration: 5 }}/>
-                        </motion.div>
+                        </div>
                         <div className='product-name'>
                             {product.ProductName}
                         </div>
                         <div className='product-price'>
-                            Rs {product.ProductPrice}.00
+                        ৳ <span className='product-price1'>{product.ProductPrice}</span>
+                    </div>
+                    <div class="middle">
+                      <button class="btn-hvr">Details ></button>
+                    </div>
                     </div>
                         <button className='addcart-btn'>ADD TO CART</button>
-                    </motion.div>
+                    </div>
                 ))}
             </div>
             </Typography>
