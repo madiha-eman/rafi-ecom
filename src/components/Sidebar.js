@@ -23,6 +23,8 @@ import Paper from '@material-ui/core/Paper';
 import { Products } from './Products';
 import SimpleModal from './btnCart';
 import Footer2 from './Footer2';
+import Rghtsidebar from './Rightsidebar'
+import Rightsidebar from './Rightsidebar';
 // import Home from './Home'
 // import { auth } from '../config/Config'
 // import { Icon } from 'react-icons-kit'
@@ -291,9 +293,15 @@ const Sidebar = ({user}) => {
           [classes.contentShift]: sidebar,
         })}
       >
+
+
+
+
         <div className={classes.drawerHeader} />
         <Typography paragraph>
-          <Products/>
+        {/* <Rghtsidebar /> */}
+        <Rightsidebar/>
+       <Products/> 
           <Footer2 />
         </Typography>
      
