@@ -5,6 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import { motion } from 'framer-motion'
 // import { useDispatch} from 'react-redux'
 import { ProductsContext } from '../global/ProductsContext'
+import DetailsProduct from './DetailsProduct'
 //  import { CartContext } from '../global/CartContext'
 import '../css/Home.css'
 
@@ -72,7 +73,7 @@ export const Products = () => {
                         ৳ <span className='product-price1'>{product.ProductPrice}</span>
                     </div>
                     <div class="middle">
-                      <button class="btn-hvr">Details ></button>
+                      <button className='btn-hvr'><DetailsProduct/></button>
                     </div>
                     </div>
                         <button className='addcart-btn'>ADD TO CART</button>

@@ -106,3 +106,8 @@ h2{
     /* padding: 2px; */
     padding-left: 8px;
 }
+@media screen and (max-width: 768px){
+    .mobile{
+        left:-250px;
+    }
+}

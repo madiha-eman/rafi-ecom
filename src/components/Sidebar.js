@@ -25,6 +25,9 @@ import SimpleModal from './btnCart';
 import Footer2 from './Footer2';
 // import Rghtsidebar from './Rightsidebar'
 import Rightsidebar from './Rightsidebar';
+import classNames from "classnames";
+import Drawer from '@material-ui/core/Drawer';
+import Hidden from '@material-ui/core/Hidden';
 // import Home from './Home'
 // import { auth } from '../config/Config'
 // import { Icon } from 'react-icons-kit'
@@ -190,17 +193,26 @@ const useStyles = makeStyles((theme) => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
-    marginLeft: 0,
+    marginLeft: 180,
   },
   contentShift: {
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen,
     }),
-    marginLeft: 224,
+    marginLeft: -10,
+
   },
+  mobile:{
+    display: 'none',
+
+    [theme.breakpoints.up('sm','md')]: {
+      display: 'none',
+
+  },
+}
 }));
-const Sidebar = ({user}) => {
+const Sidebar = () => {
   // const history = useHistory();
   //   // const { totalQty } = useContext(CartContext);
 
@@ -212,9 +224,10 @@ const Sidebar = ({user}) => {
   //   }
   const classes = useStyles();
   const [sidebar, setSidebar] = useState(false);
+  const showSidebar = () => 
+  setSidebar(!sidebar);
 
-  const showSidebar = () => setSidebar(!sidebar);
-
+ 
   return (
     <>
       <IconContext.Provider value={{ color: 'black' }}>
@@ -275,7 +288,7 @@ const Sidebar = ({user}) => {
         </Nav>
         </AppBar>
         </Grid>
-        <SidebarNav sidebar={sidebar} position='permanent'  variant="persistent"> 
+        <SidebarNav sidebar={!sidebar} position='permanent'  variant="persistent" > 
           <SidebarWrap>
         
             <NavIcon position='permanent'  variant="permanent" to='#' onClick={showSidebar}>
@@ -286,7 +299,6 @@ const Sidebar = ({user}) => {
            
           </SidebarWrap>
         </SidebarNav>
-        
       </IconContext.Provider>
       <main
         className={clsx(classes.content, {
@@ -307,7 +319,21 @@ const Sidebar = ({user}) => {
      
       </main>
 
-   
+      {/* <Hidden smUp implementation="css">
+      <Drawer
+            container={container}
+            variant="temporary"
+            sidebar={sidebar}
+            classes={{
+              paper: classes.drawerPaper,
+            }}
+            ModalProps={{
+              keepMounted: true, // Better open performance on mobile.
+            }}
+          >
+            {sidebar}
+            </Drawer>
+        </Hidden> */}
     </>
   );
 };
