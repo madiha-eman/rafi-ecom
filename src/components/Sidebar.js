@@ -23,7 +23,7 @@ import Paper from '@material-ui/core/Paper';
 import { Products } from './Products';
 import SimpleModal from './btnCart';
 import Footer2 from './Footer2';
-import Rghtsidebar from './Rightsidebar'
+// import Rghtsidebar from './Rightsidebar'
 import Rightsidebar from './Rightsidebar';
 // import Home from './Home'
 // import { auth } from '../config/Config'

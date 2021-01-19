@@ -1,6 +1,6 @@
 import React from 'react'
 import Sidebar from './Sidebar'
-import Rightsidebar from './Rightsidebar'
+// import Rightsidebar from './Rightsidebar'
 // import Footer2 from './Footer2'
 // import { Products } from './Products'
 // import btnCart from './btnCart'

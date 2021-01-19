@@ -1,23 +1,23 @@
 import React from 'react';
 import clsx from 'clsx';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles} from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import Grid from '@material-ui/core/Grid';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
+// import AppBar from '@material-ui/core/AppBar';
+// import Toolbar from '@material-ui/core/Toolbar';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import List from '@material-ui/core/List';
+// import List from '@material-ui/core/List';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import Button from '@material-ui/core/Button';
-import MenuIcon from '@material-ui/icons/Menu';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+// import MenuIcon from '@material-ui/icons/Menu';
+// import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+// import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+// import ListItem from '@material-ui/core/ListItem';
+// import ListItemIcon from '@material-ui/core/ListItemIcon';
+// import ListItemText from '@material-ui/core/ListItemText';
+// import InboxIcon from '@material-ui/icons/MoveToInbox';
+// import MailIcon from '@material-ui/icons/Mail';
 
 const drawerWidth = 240;
 
@@ -47,8 +47,8 @@ const useStyles = makeStyles((theme) => ({
     
   },
   hid: {
-    position:'fixed',
-    position:'sticky',
+    // position:'fixed',
+    // position:'sticky',
     // display: 'block',
     background: 'linear-gradient(to bottom, #696969 70%, whitesmoke 70%)',
     boxShadow: '2px 2px 4px 2px grey',
@@ -117,7 +117,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Rightsidebar() {
   const classes = useStyles();
-  const theme = useTheme();
+  // const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {
@@ -138,7 +138,7 @@ export default function Rightsidebar() {
         })} */}
       {/* > */}
         <div style={{  position:'fixed',
-      position:'sticky', position:'absolute',right: 0, marginTop:'20%',  height:'83px',}} className={clsx(open && classes.hide)} anchor="right" variant="persistent">
+        position:'sticky' ,right: 0, marginTop:'20%',  height:'83px',position:'absolute',}} className={clsx(open && classes.hide)} anchor="right" variant="persistent">
           <Button
             onClick={handleDrawerOpen}
             className={classes.hid}
