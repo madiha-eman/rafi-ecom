@@ -187,20 +187,20 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'flex-end',
   },
   content: {
-    flexGrow: 8,
-    padding: theme.spacing(3),
+    flexGrow: 1,
+    padding: theme.spacing(0,0),
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
-    marginLeft: 180,
+    marginLeft: 224,
   },
   contentShift: {
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen,
     }),
-    marginLeft: -10,
+    marginLeft: 20,
 
   },
   mobile:{
@@ -247,7 +247,7 @@ const Sidebar = () => {
                Chaldal 
             </Typography>
             </Grid>
-            <Grid xs={5}>
+            <Grid xs={8}>
           <Paper component="form" className={classes.root2}>
           
       <InputBase
@@ -261,7 +261,7 @@ const Sidebar = () => {
          </Paper>
          </Grid>
          <Divider className={classes.divider} orientation="vertical" />
-         <Grid xs={2}>
+         <Grid xs={3}>
          <div className="help">
          <Typography className={classes.title2} variant="h6">
          <IoIcons.IoMdHelpCircle  className={classes.markicon}/>
@@ -279,7 +279,7 @@ const Sidebar = () => {
             </div>
             </Grid>
             <Divider className={classes.divider} orientation="vertical" />
-            <Grid xs={2}>
+            <Grid xs={3} md={3} xl={3}>
           <div className="div-signin">
              <SimpleModal
              />
@@ -314,8 +314,10 @@ const Sidebar = () => {
         {/* <Rghtsidebar /> */}
         <Rightsidebar/>
        <Products/> 
-          <Footer2 />
-        </Typography>
+
+       </Typography>
+       <Footer2 />
+ 
      
       </main>
 

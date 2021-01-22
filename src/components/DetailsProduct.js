@@ -6,6 +6,7 @@ import { Typography } from "@material-ui/core";
 import  Signin from "./Signin";
 import '../css/Home.css'
 import SingleProduct from "./SingleProduct";
+import {Col,ListGroup,Row } from 'react-bootstrap'
 
 
 
@@ -78,7 +79,13 @@ const DetailsProduct = () => {
                 onClose={handleClose}
             >
                 <div style={modalStyle} className={classes.paper}>
-                   
+               
+                    
+
+
+               
+
+          
                    {/* <SingleProduct/> */}
                 </div>
             </Modal>

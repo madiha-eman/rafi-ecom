@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import { makeStyles} from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import Grid from '@material-ui/core/Grid';
+import styled from 'styled-components';
 // import AppBar from '@material-ui/core/AppBar';
 // import Toolbar from '@material-ui/core/Toolbar';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -10,6 +11,9 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import Button from '@material-ui/core/Button';
+import {CartReducer} from '../global/CartReducer';
+import { Cart } from './Cart';
+
 // import MenuIcon from '@material-ui/icons/Menu';
 // import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 // import ChevronRightIcon from '@material-ui/icons/ChevronRight';
@@ -19,7 +23,8 @@ import Button from '@material-ui/core/Button';
 // import InboxIcon from '@material-ui/icons/MoveToInbox';
 // import MailIcon from '@material-ui/icons/Mail';
 
-const drawerWidth = 240;
+
+const drawerWidth = 320;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -64,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
   cartclose:{
       border:'1px solid black',
       outline:'none',
-      marginLeft:'90px',
+      marginLeft:'160px',
       height:'30px',
 
   },
@@ -89,7 +94,7 @@ const useStyles = makeStyles((theme) => ({
   drawerHeader: {
     display: 'flex',
     alignItems: 'center',
-    padding: theme.spacing(0, 1),
+    padding: theme.spacing(0, 0),
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
     justifyContent: 'flex-start',
@@ -98,7 +103,7 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     flexGrow: 1,
-    padding: theme.spacing(3),
+    padding: theme.spacing(0),
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
@@ -111,7 +116,7 @@ const useStyles = makeStyles((theme) => ({
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen,
     }),
-    marginRight: 0,
+    marginrRight: 0,
   },
 }));
 
@@ -121,7 +126,7 @@ export default function Rightsidebar() {
   const [open, setOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {
-    setOpen(true);
+    setOpen(!open);
   };
 
   const handleDrawerClose = () => {
@@ -137,22 +142,27 @@ export default function Rightsidebar() {
           [classes.appBarShift]: open,
         })} */}
       {/* > */}
-        <div style={{  position:'fixed',
-        position:'sticky' ,right: 0, marginTop:'18%',  height:'83px',position:'absolute',}} className={clsx(open && classes.hide)} anchor="right" variant="persistent">
+ 
+        <div style={{  position:'sticky',
+        right: 0, marginTop:'18%',  height:'83px',position:'absolute',}} className={clsx(open && classes.hide)} anchor="right">
           <Button
             onClick={handleDrawerOpen}
             className={classes.hid}
+            variant="permanent"
           >
            
           </Button>
         </div>
+     
        {/* </AppBar>  */}
       <main
         className={clsx(classes.content, {
           [classes.contentShift]: open,
         })}
       >
+      {/* <div className={classes.drawerHeader} /> */}
       </main>
+
       <Drawer
         className={classes.drawer}
         variant="persistent"
@@ -168,14 +178,16 @@ export default function Rightsidebar() {
             {theme.direction === 'rtl' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </div> */}
-        <Divider />
+        {/* <Divider /> */}
         <Grid direction='row' onClick={handleDrawerClose}  className={classes.cart1}>
         <Typography  varient='h3' onClick={handleDrawerClose} className={classes.cart1}>0 ITEMS
     <Button onClick={handleDrawerClose} className={classes.cartclose}>Close</Button>
     </Typography>
     </Grid>
+  
+      <Cart/>
+    
       </Drawer>
-
      </div>
   );
 }

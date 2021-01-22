@@ -3,10 +3,10 @@ import React, { useContext } from 'react'
 // import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import { motion } from 'framer-motion'
-// import { useDispatch} from 'react-redux'
+import { useDispatch} from 'react-redux'
 import { ProductsContext } from '../global/ProductsContext'
 import DetailsProduct from './DetailsProduct'
-//  import { CartContext } from '../global/CartContext'
+ import { CartContext } from '../global/CartContext'
 import '../css/Home.css'
 
 // const useStyles = makeStyles((theme) => ({
@@ -43,7 +43,7 @@ export const Products = () => {
   
     // const showSidebar = () => setSidebar(!sidebar);
 
-   //const { dispatch } = useContext(CartContext);
+   const { dispatch } = useContext(CartContext);
 
     return (
         <>
@@ -76,7 +76,7 @@ export const Products = () => {
                       <button className='btn-hvr'><DetailsProduct/></button>
                     </div>
                     </div>
-                        <button className='addcart-btn'>ADD TO CART</button>
+                        <button className='addcart-btn'onClick={() => dispatch({ type: 'ADD_TO_CART', id: product.ProductID, product })}>ADD TO CART</button>
                     </div>
                 ))}
             </div>

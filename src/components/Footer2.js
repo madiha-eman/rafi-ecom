@@ -11,7 +11,7 @@ import '../App.css'
 
 const useStyles = makeStyles((theme) => ({
   root:{
-    margin:"0 auto",
+    margin:0,
     padding:0,
   },
  title:{
@@ -107,8 +107,9 @@ const Footer2=()=>{
       //     [classes.contentShift]: sidebar,
       //   })}
       // > 
+      <footer className='foot'>
       <Grid className={classes.root}>
-        <div className='foot'>
+        
        <Grid className={classes.foot1} container direction="row">
         
       <Grid xs={2}>
@@ -217,8 +218,9 @@ const Footer2=()=>{
       <a href='https://twitter.com/'> <img className={classes.social} src='https://cdn.chaldal.net/asset/Egg.Grocery.Fabric/Egg.Grocery.Web/1.5.0+Release-1638/Default/components/shared/NewFooter/images/twitter.png?q=low&webp=1&alpha=1' alt='twitter'/></a> 
       <a href='https://www.instagram.com/'><img className={classes.social} src='https://cdn.chaldal.net/asset/Egg.Grocery.Fabric/Egg.Grocery.Web/1.5.0+Release-1638/Default/components/shared/NewFooter/images/Instagram.png?q=low&webp=1&alpha=1' alt='insta'/></a>
         </Grid>
- </div>
  </Grid>
+  </footer>
+
 //  </main>
     )
 }

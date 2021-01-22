@@ -9,30 +9,33 @@ import Offer from './pages/Offer';
 import Home from './components/Home';
 import { ProductsContextProvider } from './global/ProductsContext'
 import AddProducts from './components/AddProducts'
+import { CartContextProvider } from './global/CartContext';
+import { Cart } from './components/Cart';
+import ProductDetail from './components/ProductDetail';
 
 export class App extends Component {
 
-  state = {
-      user: null,
-  }
+//   state = {
+//       user: null,
+//   }
 
   componentDidMount() {
 
       // getting user info for navigation bar
-      auth.onAuthStateChanged(user => {
-          if (user) {
-              db.collection('SignedUpUsersData').doc(user.uid).get().then(snapshot => {
-                  this.setState({
-                      user: snapshot.data().Name
-                  })
-              })
-          }
-          else {
-              this.setState({
-                  user: null
-              })
-          }
-      })
+    //   auth.onAuthStateChanged(user => {
+    //       if (user) {
+    //           db.collection('SignedUpUsersData').doc(user.uid).get().then(snapshot => {
+    //               this.setState({
+    //                   user: snapshot.data().Name
+    //               })
+    //           })
+    //       }
+    //       else {
+    //           this.setState({
+    //               user: null
+    //           })
+    //       }
+    //   })
 
   }
 
@@ -40,10 +43,11 @@ export class App extends Component {
   return (
     <div>
       <ProductsContextProvider>
+      <CartContextProvider>
     <Router>
       {/* <Home/> */}
       <Switch>
-      <Route exact path='/' component={() => <Home user={this.state.user} />} />
+      <Route exact path='/' component={() => <Home  />} />
 
        <Route path='/offer' exact component={Offer} />
         <Route path='/overview' exact component={Overview} />
@@ -53,9 +57,13 @@ export class App extends Component {
         <Route path='/reports/reports3' exact component={ReportsThree} />
         <Route path='/team' exact component={Team} />
         <Route path="/addproducts" exact component={AddProducts} />
+        <Route path="/productdetail" exact component={ProductDetail} />
+
+        <Route exact path='/cartproducts' component={() => <Cart  />}/>
 
       </Switch>
     </Router>
+    </CartContextProvider>
     </ProductsContextProvider>
     </div>
  )

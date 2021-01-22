@@ -1,3 +1,9 @@
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+}
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Satisfy&display=swap');
 
 
@@ -5,9 +11,8 @@
 .div-signin{
     background-color:#ee496a;     
     height: 58px;
-    width: 100% !important; 
+    /* width: 100% !important;  */
     text-align: center;
-    margin: 0; 
 }
 @media screen and (max-width: 600px){
     .div-signin{
@@ -102,9 +107,12 @@ h2{
 
     /* footer css */
 .foot{
+    width: 100%;
     background-color: rgb(214, 210, 210);
     /* padding: 2px; */
     padding-left: 8px;
+
+    margin-top: auto;
 }
 @media screen and (max-width: 768px){
     .mobile{

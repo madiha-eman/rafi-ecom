@@ -8,6 +8,10 @@ import { makeStyles } from '@material-ui/core/styles';
 // import Icon from '@material-ui/core/Icon';
 import FbIcon from '@material-ui/icons/Facebook';
 import EmailIcon from '@material-ui/icons/Email';
+import {iosPlusEmpty} from 'react-icons-kit/ionicons/iosPlusEmpty'
+import {socialFacebookOutline} from 'react-icons-kit/ionicons/socialFacebookOutline'
+import { Icon } from 'react-icons-kit'
+
 // import TextField from '@material-ui/core/TextField';
 
 // const CssTextField = withStyles({
@@ -90,7 +94,7 @@ const Signin = () => {
         size="large"
         className={classes.button1}
         startIcon={<FbIcon />}>
-           Sigin Up   <span className={classes.fb1}>or</span> Login <span className={classes.fb1}>with </span><span className={classes.fb2}>Facebook</span>
+           Sign Up   <span className={classes.fb1}>or</span> Login <span className={classes.fb1}>with </span><span className={classes.fb2}>Facebook</span>
       </Button>
       <Button
        variant="outlined"
@@ -107,9 +111,10 @@ const Signin = () => {
       PLEASE ENTER YOUR MOBILE PHONE NUMBER
       </Typography>
       <form className={classes.root} noValidate>
+        <Icon   icon={iosPlusEmpty} size={22}/>
       <input
           id="filled-helperText"
-          defaultValue=" + 88"
+          defaultValue="88"   
           className={classes.text}
         />
         </form>
