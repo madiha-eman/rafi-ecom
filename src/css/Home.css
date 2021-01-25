@@ -359,23 +359,34 @@ border-top: 1px solid gray;
     /* position: absolute;
     display: 'flex'; */
     /* flex-direction: row; */
-    padding: 10px;
+    padding: 8px;
     border: 1px solid #e4e4e4;
     width: 100%;
 }
+.merge-btn{
+    margin-left: 4px;
+
+}
 .merge-btn1{
-   width: 150px;
+   width: 170px;
+   opacity: 0.8;
+   padding: 10px !important;
+   background-color: #ee496a !important;
    position: relative;
    transition: .5s;
+   font-size: 16px !important;
    border: none !important;
    border-radius: 4px 0 0 4px!important;
 }
 .merge-btn2{
-    width: 100px;
+    width: 120px;
+    font-size: 16px !important;
+    padding: 10px !important;
     position: relative;
+    background-color: #c5465f !important;
     transition: .5s;
     border: none !important;
-    border-radius: 0 25px 25px 0!important;
+    border-radius: 0 4px 4px 0!important;
  }
 /* .cart-summary .cart-summary-heading {
     border-bottom: 1px solid #f57224;
@@ -386,7 +397,9 @@ border-top: 1px solid gray;
     justify-content: space-between; 
      /* margin-top: 10px; */
 }
-
+.shopping-bag{
+    text-align: center;
+}
 /* .cashout-link {
     font-size: 12px;
     font-weight: 600;

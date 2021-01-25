@@ -200,7 +200,7 @@ const useStyles = makeStyles((theme) => ({
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen,
     }),
-    marginLeft: 20,
+    marginLeft: 40,
 
   },
   mobile:{
