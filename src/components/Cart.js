@@ -18,6 +18,8 @@ import Modal from '@material-ui/core/Modal';
 import { StickyContainer, Sticky } from 'react-sticky';
 import StickyBox from "react-sticky-box";
 import AppBar from '@material-ui/core/AppBar';
+import Grid from '@material-ui/core/Grid';
+
 
 
 // function rand() {
@@ -61,7 +63,7 @@ export const Cart = ({ user }) => {
 
     const { shoppingCart, dispatch, totalPrice, totalQty } = useContext(CartContext);
 
-    const history = useHistory();
+    // const history = useHistory();
 
     // useEffect(() => {
     //     auth.onAuthStateChanged(user => {
@@ -126,35 +128,37 @@ export const Cart = ({ user }) => {
                     }
 
                     </div>
-                    {/* <div>
+                    <div className='sticky'>
                         <h4>
                             Have a special code?
                         </h4>
-                    </div> */}
                     
+                        </div>
                    
                     {shoppingCart.length > 0 && <div className='cart-summary' position="fixed">
                       <StickyBox offsetTop={20} offsetBottom={20}>
-                        <div className='cart-summary-heading'>
-                            Cart-Summary
-                        </div>
-                        <div className='cart-summary-price'>
-                            <span>Total Price</span>
-                            <span>{totalPrice}</span>
-                        </div>
-                        <div className='cart-summary-price'>
+                        {/* <div className='cart-summary-heading'>
+                           
+                        </div> */}
+                        <div className='merge-btn'>
+                            <Grid>
+                            {/* <Link to='cashout' className='cashout-link'> */}
+                            <Button  variant="contained" color="secondary" className='merge-btn1'>
+                                Place Order
+                        </Button>
+                        {/* </Link> */}
+                        <Button  variant="contained" color="secondary" className='merge-btn2'><span> ৳ {totalPrice}</span>
+                        </Button>
+                        </Grid>
+                        {/* <div className='cart-summary-price'>
                             <span>Total Qty</span>
                             <span>{totalQty}</span>
-                        </div>
-                        <Link to='cashout' className='cashout-link'>
-                            <button className='btn btn-success btn-md' style={{ marginTop: 5 + 'px' }}>
-                                Cash on delivery
-                        </button>
-                        </Link>
+                        </div> */}
+                    </div>
                         </StickyBox>
                     </div>} 
                  
-             
+                   
             </>
               
         </>  

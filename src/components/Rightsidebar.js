@@ -13,6 +13,7 @@ import Divider from '@material-ui/core/Divider';
 import Button from '@material-ui/core/Button';
 import {CartReducer} from '../global/CartReducer';
 import { Cart } from './Cart';
+import '../css/Home.css'
 
 // import MenuIcon from '@material-ui/icons/Menu';
 // import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
@@ -73,6 +74,10 @@ const useStyles = makeStyles((theme) => ({
       height:'30px',
 
   },
+  cont:{
+    flex:'1 0 auto',
+
+  },
   cart1:{
       background: '#a9a9a9',
       paddingTop:'1.5px',
@@ -80,7 +85,6 @@ const useStyles = makeStyles((theme) => ({
       
   },
   drawer: {
-    
     width: drawerWidth,
     flexShrink: 1,
 
@@ -143,8 +147,7 @@ export default function Rightsidebar() {
         })} */}
       {/* > */}
  
-        <div style={{  position:'sticky',
-        right: 0, marginTop:'18%',  height:'83px',position:'absolute',}} className={clsx(open && classes.hide)} anchor="right">
+        <div style={{ position:'fixed', right: 0, marginTop:'20%',  height:'83px',}} className={clsx(open && classes.hide)} anchor="right">
           <Button
             onClick={handleDrawerOpen}
             className={classes.hid}
@@ -179,14 +182,15 @@ export default function Rightsidebar() {
           </IconButton>
         </div> */}
         {/* <Divider /> */}
+        <div className={classes.cont}>
         <Grid direction='row' onClick={handleDrawerClose}  className={classes.cart1}>
         <Typography  varient='h3' onClick={handleDrawerClose} className={classes.cart1}>0 ITEMS
     <Button onClick={handleDrawerClose} className={classes.cartclose}>Close</Button>
     </Typography>
     </Grid>
-  
-      <Cart/>
     
+      <Cart/>
+      </div>
       </Drawer>
      </div>
   );

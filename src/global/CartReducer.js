@@ -43,7 +43,7 @@ export const CartReducer = (state, action) => {
 
         case 'INC':
             product = action.cart;
-            product.qty = ++product.qty;
+            product.qty = product.qty + 1;
             product.TotalProductPrice = product.qty * product.ProductPrice;
             updatedQty = totalQty + 1;
             updatedPrice = totalPrice + product.ProductPrice;
