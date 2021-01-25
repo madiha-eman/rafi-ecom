@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import clsx from 'clsx';
 import { makeStyles} from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -12,6 +12,7 @@ import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import Button from '@material-ui/core/Button';
 import {CartReducer} from '../global/CartReducer';
+import { CartContext } from '../global/CartContext'
 import { Cart } from './Cart';
 import '../css/Home.css'
 
@@ -50,23 +51,30 @@ const useStyles = makeStyles((theme) => ({
   },
   hide:{
       display:'none',
+      webkitTapHighlightColor:'transparent', 
     
   },
   hid: {
     // position:'fixed',
     // position:'sticky',
     // display: 'block',
+    opacity: '.7',
+    background:'#F5FCEB',
     background: 'linear-gradient(to bottom, #696969 70%, whitesmoke 70%)',
-    boxShadow: '2px 2px 4px 2px grey',
+    boxShadow: '0 0 16px -1px rgba(0,0,0,.75)',
     width:"100%",
     height:'100%',
     border:'none',
-  },
+    transition: '.1s ease-in-out',
+   
   '& hover':{
+    opacity: '.9',
     boxShadow: '2px 0px 4px 2px lightgrey',
     background: 'linear-gradient(to bottom, #dcdcdc 70%, whitesmoke 70%)',
 
   },
+   
+},
   cartclose:{
       border:'1px solid black',
       outline:'none',
@@ -74,12 +82,10 @@ const useStyles = makeStyles((theme) => ({
       height:'30px',
 
   },
-  cont:{
-    flex:'1 0 auto',
-
-  },
+  
   cart1:{
-      background: '#a9a9a9',
+      background: '#e4e0e1',
+      height:'39px',
       paddingTop:'1.5px',
       paddingBottom:'1.5px'
       
@@ -125,6 +131,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Rightsidebar() {
+  const { totalQty } = useContext(CartContext);
   const classes = useStyles();
   // const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -148,12 +155,13 @@ export default function Rightsidebar() {
       {/* > */}
  
         <div style={{ position:'fixed', right: 0, marginTop:'20%',  height:'83px',}} className={clsx(open && classes.hide)} anchor="right">
+     
           <Button
             onClick={handleDrawerOpen}
             className={classes.hid}
             variant="permanent"
           >
-           
+             <span className='no-of-products'>{totalQty} ITEMS</span>
           </Button>
         </div>
      
@@ -182,15 +190,14 @@ export default function Rightsidebar() {
           </IconButton>
         </div> */}
         {/* <Divider /> */}
-        <div className={classes.cont}>
-        <Grid direction='row' onClick={handleDrawerClose}  className={classes.cart1}>
-        <Typography  varient='h3' onClick={handleDrawerClose} className={classes.cart1}>0 ITEMS
+        <div className='cont'>
+        <Grid direction='row' onClick={handleDrawerClose} position='fixed'  className={classes.cart1}>
+        <Typography position='fixed'  varient='h3' onClick={handleDrawerClose} className={classes.cart1}>0 ITEMS
     <Button onClick={handleDrawerClose} className={classes.cartclose}>Close</Button>
     </Typography>
     </Grid>
-    
+    </div>
       <Cart/>
-      </div>
       </Drawer>
      </div>
   );

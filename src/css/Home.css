@@ -231,6 +231,8 @@ h1 {
     padding-left: 4px;
     font-size: 13px;
     font-weight: 500;
+    margin-top: 10px;
+    /* height:100% !important; */
 }
 
 .cart-container .cart-card {
@@ -240,8 +242,10 @@ h1 {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     border-bottom: 1px solid rgb(231, 226, 226);
+    border-top: 1px solid rgb(231, 226, 226);
+
 }
 .cart-container .Exp-delivery{
     width: 100%;
@@ -282,6 +286,7 @@ h1 {
 .cart-container .cart-card .cart-price {
     width: 150px;
     margin-left: 20px;
+    color: #615e58;
 }
 
 @media(max-width: 768px) {
@@ -299,7 +304,7 @@ h1 {
     width: 100px;
     margin-left: 10px;
     font-weight: 200!important;
-    color: rgb(43, 42, 42);
+    color: #615e58;
 }
 
 @media(max-width: 768px) {
@@ -342,11 +347,16 @@ h1 {
 }
 
 .sticky{
-flex-shrink: 0;
-background-color: rgb(177, 174, 174);
+background-color: #e4e0e1;
 border-bottom: 1px solid gray;
 border-top: 1px solid gray;
-
+}
+.foter{
+    background-color: #e4e0e1;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 82%;
 }
 .merge-btn{
     display: flex;
@@ -354,12 +364,34 @@ border-top: 1px solid gray;
     position: relative;
 
 }
+
+ .no-of-products {
+    /* background: #f57224; */
+    color: #FDD670;
+    font-size: 10px;
+    font-weight: 600;
+    /* padding: 2px; */
+    /* width: 14px; */
+    /* height: 14px; */
+    /* border-radius: 3px; */
+    position: relative;
+    /* top: 2px; */
+    /* right: 5px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cont{
+    /* position: fixed; */
+  position: fixed;
+  width: 100%;
+}
 /* cart summary */
 .cart-summary {
     /* position: absolute;
     display: 'flex'; */
     /* flex-direction: row; */
-    padding: 8px;
+    padding: 4px;
     border: 1px solid #e4e4e4;
     width: 100%;
 }
@@ -370,7 +402,7 @@ border-top: 1px solid gray;
 .merge-btn1{
    width: 170px;
    opacity: 0.8;
-   padding: 10px !important;
+   padding: 5px !important;
    background-color: #ee496a !important;
    position: relative;
    transition: .5s;
@@ -381,7 +413,7 @@ border-top: 1px solid gray;
 .merge-btn2{
     width: 120px;
     font-size: 16px !important;
-    padding: 10px !important;
+    padding: 5px !important;
     position: relative;
     background-color: #c5465f !important;
     transition: .5s;
@@ -399,6 +431,10 @@ border-top: 1px solid gray;
 }
 .shopping-bag{
     text-align: center;
+    /* color: white; */
+}
+.sticky{
+  
 }
 /* .cashout-link {
     font-size: 12px;

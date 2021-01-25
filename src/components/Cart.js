@@ -78,16 +78,21 @@ const useStyles = makeStyles((theme) => ({
         height: '30px',
 
     },
-    cont: {
-        flex: '1 0 auto',
-
-    },
+    
     cart1: {
         background: '#a9a9a9',
         paddingTop: '1.5px',
         paddingBottom: '1.5px'
 
     },
+    input:{
+        marginLeft: '-30px',
+        padding: '4px',
+        borderRadius: '6px',
+        border:'none',
+        outline:'none',
+        background:'#EDEDED',
+    }
     // drawer: {
     //   width: drawerWidth,
     //   flexShrink: 1,
@@ -143,14 +148,15 @@ export const Cart = ({ user }) => {
     };
     return (
         <>
-            <>       <div style={{ right: 0, }} className={clsx(open && classes.hide)} anchor="right">
+            <>  
+                <div style={{ right: 0, }} className={clsx(open && classes.hide)} anchor="right">
                 <img src='' />
             </div>
                 {shoppingCart.length !== 0}
                 <div className='cart-container'>
                     {
                         shoppingCart.length === 0 && <>
-                            <div style={{ marginTop: '20%',marginLeft:'30px', }} className={clsx(open && classes.hide)} anchor="right">
+                            <div style={{ marginLeft:'30px', marginTop:'50px',}} className={clsx(open && classes.hide)} anchor="right">
                                 <img src='https://cdn.chaldal.net/asset/Egg.Grocery.Fabric/Egg.Grocery.Web/1.5.0+Release-1704/Default/components/header/ShoppingCart/images/emptyShoppingBag.png?q=low&webp=1&alpha=1' />
                                 <h2 className='shopping-bag'>Your shopping bag is empty. Start shopping </h2>
                             </div>
@@ -201,22 +207,28 @@ export const Cart = ({ user }) => {
                     }
 
                 </div>
-
+                  <footer className='foter'>
                 <div className='sticky'>
                     <TreeView
+                    style={{textAlign:'center', marginLeft:60,}}
                         className={classes.root}
                         defaultCollapseIcon={<Icon icon={circleDown}/>}
                         defaultExpandIcon={<Icon icon={circleUp}/>}
                     >
-                        <TreeItem nodeId="1" label="Have a special code?">
-                            <input type='text' /> <Button variant="contained" color="secondary">Go</Button> close
+                        <TreeItem  nodeId="1" label="Have a special code?">
+                            <input type='text' placeholder='Special Code' className={classes.input}/> <Button variant="contained" color="secondary">Go</Button> close
 
                        </TreeItem>
                     </TreeView>
 
-                </div>
+                    </div>
+              
+                {shoppingCart.length > 0 &&
 
-                {shoppingCart.length > 0 && <div className='cart-summary' position="fixed">
+                <div className='cart-summary' position="fixed">
+                          {/* <div style={{ marginLeft:'10px',}} className={clsx(open && classes.hide)} anchor="right">
+                 <h2 className='shopping-bag'>Phone : 0188-1234567 </h2>
+             </div> */}
                     <StickyBox offsetTop={20} offsetBottom={20}>
                         {/* <div className='cart-summary-heading'>
                            
@@ -239,7 +251,7 @@ export const Cart = ({ user }) => {
                     </StickyBox>
                 </div>}
 
-
+                </footer>
             </>
 
         </>
