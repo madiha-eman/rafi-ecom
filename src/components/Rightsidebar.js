@@ -13,6 +13,7 @@ import Divider from '@material-ui/core/Divider';
 import Button from '@material-ui/core/Button';
 import {CartReducer} from '../global/CartReducer';
 import { CartContext } from '../global/CartContext'
+import CountUp from 'react-countup';
 import { Cart } from './Cart';
 import '../css/Home.css'
 
@@ -60,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
     // display: 'block',
     opacity: '.7',
     background:'#F5FCEB',
-    background: 'linear-gradient(to bottom, #696969 70%, whitesmoke 70%)',
+    background: 'linear-gradient(to bottom, #696969 74%, whitesmoke 70%)',
     boxShadow: '0 0 16px -1px rgba(0,0,0,.75)',
     width:"100%",
     height:'100%',
@@ -131,7 +132,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Rightsidebar() {
-  const { totalQty } = useContext(CartContext);
+  const { totalQty, totalPrice } = useContext(CartContext);
   const classes = useStyles();
   // const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -154,15 +155,23 @@ export default function Rightsidebar() {
         })} */}
       {/* > */}
  
-        <div style={{ position:'fixed', right: 0, marginTop:'20%',  height:'83px',}} className={clsx(open && classes.hide)} anchor="right">
+        <div style={{ position:'fixed', right: 0, marginTop:'20%',  height:'76px',}} className={clsx(open && classes.hide)} anchor="right">
      
           <Button
             onClick={handleDrawerOpen}
             className={classes.hid}
             variant="permanent"
           >
-             <span className='no-of-products'>{totalQty} ITEMS</span>
+             <span className='no-of-products'>{totalQty} ITEMS
+             <h5 className='price-of-products'> ৳ 
+             <CountUp
+              start={0}
+              end={totalPrice}
+              decimals={0} />
+               </h5></span>
+             
           </Button>
+       
         </div>
      
        {/* </AppBar>  */}

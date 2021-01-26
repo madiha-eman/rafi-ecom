@@ -69,7 +69,7 @@ const DetailsProduct = () => {
     return (
         <div>
             <button className='btn-hvr' onClick={handleOpen}>
-              Details
+              Details >
             </button>
 
             <Modal
