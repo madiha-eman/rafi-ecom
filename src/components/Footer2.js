@@ -108,39 +108,39 @@ const Footer2=()=>{
       //   })}
       // > 
       <footer className='foot'>
-      <Grid className={classes.root}>
+      <Grid className={classes.root} container>
         
        <Grid className={classes.foot1} container direction="row">
         
-      <Grid xs={2}>
+      <Grid xs={2} md={2} sm={4} >
       <Typography className={classes.title} variant="h4">
         #  1 hour delivery
         </Typography>
        
         </Grid>
-        <Grid xs={2}>
+        <Grid xs={2} xl={3} md={2}>
         <Typography className={classes.title} variant="h4">
           Cash on delivery
           </Typography>
         </Grid>
-        <Grid xs={2}>
+        <Grid xs={2} xl={3} md={2}>
 
         <Typography className={classes.title3} variant="h4">
            0188-1234567
            </Typography>
         </Grid>
-        <Grid xs={3}>
+        <Grid xs={3} xl={3} md={3}>
         <Typography className={classes.title4} variant="h4">
         <span className={classes.mintitle}>or email:</span> support@chaldal.com
          </Typography>
          </Grid>
 
-      <Grid xs={0}>
+      <Grid xs={1} xl={1}>
       <Typography className={classes.title} variant="h4">
              Pay with
              </Typography>
         </Grid>
-        <Grid xs={2}>
+        <Grid xs={2} sm={2} xl={3} md={2}>
         <img src='https://cdn.chaldal.net/asset/Egg.Grocery.Fabric/Egg.Grocery.Web/1.5.0+Release-1638/Default/components/shared/NewFooter/images/Amex.png?q=low&webp=1&alpha=1'  width='25px' height='25px' alt='icon1'/>
         <img src='https://cdn.chaldal.net/asset/Egg.Grocery.Fabric/Egg.Grocery.Web/1.5.0+Release-1638/Default/components/shared/NewFooter/images/mastercard.png?q=low&webp=1&alpha=1'  width='25px' height='25px' alt='icon2'/>
         <img src='https://cdn.chaldal.net/asset/Egg.Grocery.Fabric/Egg.Grocery.Web/1.5.0+Release-1638/Default/components/shared/NewFooter/images/VIsa.png?q=low&webp=1&alpha=1' width= '25px' height='25px' alt='icon3'/>
@@ -152,12 +152,12 @@ const Footer2=()=>{
 
      <Grid className={classes.foot2} container direction="row">
    
-        <Grid xs={4} >
+        <Grid xs={4} xl={3} md={4}>
         <Grid xs={1} sm={12}>
         <Typography className={classes.title4} varient="4">
             Customer Service
             </Typography>
-        </Grid>
+            </Grid>
         <Grid xs={1} sm={12}>
         <Typography className={classes.title} varient="4">
             Contact Us
@@ -175,7 +175,7 @@ const Footer2=()=>{
         </Grid>
         </Grid>
 
-        <Grid xs={3}>
+        <Grid xs={3} xl={3} md={3} >
         <Grid xs={1} sm={12}>
         <Typography className={classes.title4} varient="4">
             About Chaldal
@@ -193,7 +193,7 @@ const Footer2=()=>{
         </Grid>
         </Grid>
 
-        <Grid xs={2} >
+        <Grid xs={2}xl={3} md={2} >
         <Grid xs={1} sm={12}>
         <Typography className={classes.title4} varient="4">
             For Bussiness
@@ -206,13 +206,13 @@ const Footer2=()=>{
         </Grid>
        
         </Grid>
-      <Grid xs={2} >         
+      <Grid xs={2} xl={3} md={3} >         
       <img className={classes.google} src='https://cdn.chaldal.net/asset/Egg.Grocery.Fabric/Egg.Grocery.Web/1.5.0+Release-1638/Default/components/shared/NewFooter/images/google_play_store.png?q=low&webp=1&alpha=1' alt='play1'/>
       <img className={classes.google} src='https://cdn.chaldal.net/asset/Egg.Grocery.Fabric/Egg.Grocery.Web/1.5.0+Release-1638/Default/components/shared/NewFooter/images/app_store.png?q=low&webp=1&alpha=1' alt='play-app'/> 
       
          </Grid>
         </Grid>
-        <Grid conatiner className={classes.mainSocial} sm={12} xs={12}>
+        <Grid conatiner className={classes.mainSocial} sm={12} xs={12} xl={12} md={12}>
         <a href='https://www.facebook.com/'><img className={classes.social} src=' https://cdn.chaldal.net/asset/Egg.Grocery.Fabric/Egg.Grocery.Web/1.5.0+Release-1638/Default/components/shared/NewFooter/images/Facebook.png?q=low&webp=1&alpha=1' alt='fb'/></a>
       <a href='https://www.youtube.com/'> <img className={classes.social} src='https://cdn.chaldal.net/asset/Egg.Grocery.Fabric/Egg.Grocery.Web/1.5.0+Release-1638/Default/components/shared/NewFooter/images/Youtube.png?q=low&webp=1&alpha=1' alt='youtube'/></a> 
       <a href='https://twitter.com/'> <img className={classes.social} src='https://cdn.chaldal.net/asset/Egg.Grocery.Fabric/Egg.Grocery.Web/1.5.0+Release-1638/Default/components/shared/NewFooter/images/twitter.png?q=low&webp=1&alpha=1' alt='twitter'/></a> 

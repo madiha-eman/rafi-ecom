@@ -3,14 +3,17 @@ import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import { motion } from 'framer-motion'
-import { useDispatch} from 'react-redux'
+// import { useDispatch } from 'react-redux'
 import { ProductsContext } from '../global/ProductsContext'
 import DetailsProduct from './DetailsProduct'
- import { CartContext } from '../global/CartContext'
+import { CartContext } from '../global/CartContext'
+import { Icon } from 'react-icons-kit'
+import {arrows_circle_plus} from 'react-icons-kit/linea/arrows_circle_plus'
+import {arrows_circle_minus} from 'react-icons-kit/linea/arrows_circle_minus'
 import '../css/Home.css'
 
 const useStyles = makeStyles((theme) => ({
-drawerHeader: {
+  drawerHeader: {
     display: 'flex',
     alignItems: 'center',
     padding: theme.spacing(0, 1),
@@ -21,7 +24,7 @@ drawerHeader: {
   hide: {
     display: 'none',
 
-},
+  },
   content: {
     flexGrow: 8,
     padding: theme.spacing(3),
@@ -40,69 +43,77 @@ drawerHeader: {
   },
 }));
 export const Products = () => {
+  const { products } = useContext(ProductsContext);
+  const classes = useStyles();
+  const [open, setOpen] = useState(false);
+  const handleDrawerOpen = () => {
+    setOpen(!open);
+  };
 
-    const { products } = useContext(ProductsContext);
-    const classes = useStyles();
-    const [open, setOpen] = useState(false);
-    const handleDrawerOpen = () => {
-        setOpen(!open);
-    };
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
+  const [title, setTitle] = useState('Add to Shopping Bag');
+  // const [sidebar, setSidebar] = useState(false);
 
-    const handleDrawerClose = () => {
-        setOpen(false);
-    };
+  // const showSidebar = () => setSidebar(!sidebar);
 
-    // const [sidebar, setSidebar] = useState(false);
-  
-    // const showSidebar = () => setSidebar(!sidebar);
+  const {  shoppingCart, dispatch } = useContext(CartContext);
 
-   const { dispatch } = useContext(CartContext);
-
-    return (
-        <>
-            {/* {products.length !== 0 && <h1>Products</h1>}  */}
-            {/* <main
+  return (
+    <>
+      {/* {products.length !== 0 && <h1>Products</h1>}  */}
+      {/* <main
         className={clsx(classes.content, {
           [classes.contentShift]: sidebar,
         })}
       > */}
-        {/* <div className={classes.drawerHeader} /> */}
-        <Typography paragraph>
-            <div className='products-container'>
-                {products.length === 0 && <div>slow internet...no products to display</div>}
-                {products.map(product => (
-                    <div className='product-card' key={product.ProductID}>
-                        <div className="product-hvr">
-                        <div className='product-img'>
-                            <motion.img src={product.ProductImg} alt="not found" 
-                              initial={{opacity: 0}}
-                              animate={{opacity: 1 }}
-                              transition={{duration: 5 }}/>
-                        </div>
-                        <div className='product-name'>
-                            {product.ProductName}
-                        </div>
-                        <div className='product-price'>
-                        ৳ <span className='product-price1'>{product.ProductPrice}</span>
-                    </div>
-                    {/* <div className='bag'>
+      {/* <div className={classes.drawerHeader} /> */}
+      <Typography paragraph>
+        <div className='products-container'>
+          {products.length === 0 && <div>slow internet...no products to display</div>}
+          {products.map(product => (
+            <div className='product-card' key={product.ProductID}>
+              <div className="product-hvr">
+                <div className='product-img'>
+                  <motion.img src={product.ProductImg} alt="not found"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 5 }} />
+                </div>
+                <div className='product-name'>
+                  {product.ProductName}
+                </div>
+                <div className='product-price'>
+                  ৳ <span className='product-price1'>{product.ProductPrice}</span>
+                </div>
+                {/* <div className='bag'>
                     {/* <div className={clsx(open && classes.hide)} anchor="right"> */}
-                    {/* </div>  */}
-                    {/* </div> */} 
-                    <div class="middle">
-                     <div className={clsx(open && classes.hide)}>
-                    <h2 className='shopping-bag' onClick={() => dispatch({ type: 'ADD_TO_CART', id: product.ProductID, product})}>Add to Shopping Bag </h2>
-                    </div> 
-                      <button className='btn-hvr'><DetailsProduct/></button>
-                    </div>
-                    </div>
-                        <button className='addcart-btn' onClick={() => dispatch({ type: 'ADD_TO_CART', id: product.ProductID, product})}><a>ADD TO CART</a></button>
-                    </div>
-                ))}
+                {/* </div>  */}
+                {/* </div> */}
+                <div class="middle">
+                  <div className={clsx(open && classes.hide)} onClick={() => dispatch({ type: 'ADD_TO_CART', id: product.ProductID, product })}>
+                    <h2 className='shopping-bag' onClick={() => setTitle(<> 
+                      <p className='p-bag'> ৳ {product.ProductPrice}
+                      {shoppingCart && shoppingCart.map(cart => (
+                        <div key={cart.ProductID}>
+                        <div className='add-hvr'>
+                           <Icon icon={arrows_circle_minus} size={22} className='dec1' onClick={() => dispatch({ type: 'DEC', id: cart.ProductID, cart })} />
+                                  <div className='quantity'>{cart.qty}</div>
+                           <Icon icon={arrows_circle_plus} size={22} className='inc1' onClick={() => dispatch({ type: 'INC', id: cart.ProductID, cart })} /> 
+                               </div>
+                               </div> ))} </p> <span className='p2-bag'>in bag</span> </>)}> <span  onClick={() => dispatch({ type: 'ADD_TO_CART', id: product.ProductID, product })} >{title}</span> </h2>
+                  </div>
+                  <button className='btn-hvr'><DetailsProduct /></button>
+                </div>
+              </div>
+              <button className='addcart-btn' onClick={() => dispatch({ type: 'ADD_TO_CART', id: product.ProductID, product })}><a>ADD TO CART</a></button>
             </div>
-            </Typography>
-     
-     {/* </main>  */}
-        </>
-    )
+          ))}
+        </div>
+      </Typography>
+
+      {/* </main>  */}
+    </>
+  )
 }

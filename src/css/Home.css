@@ -160,6 +160,26 @@ h1 {
     background-color: white;
      box-shadow: 0px 4px 5px #e4e4e4;
 }
+.add-hvr{
+    display: flex;
+    flex-direction: inline;
+}
+/* .p-bag{
+    padding-bottom: 7px;
+
+}
+.p2-bag{
+    margin-top: 9px;
+} */
+.inc1,
+.dec1 {
+    cursor: pointer;
+    color:  rgb(182, 25, 25) !important;
+}
+.quantity{
+     color: rgb(231, 33, 33) !important;
+
+}
 
 /* hover image */
 .product-hvr{
@@ -199,12 +219,13 @@ h1 {
  .product-hvr .middle .btn-hvr {
     outline: none;
     border: none;
+    position: relative;
     height:30px;
     width: 100%;
     background-color:	rgb(224,224,224);
     cursor: pointer;
-    transition: all 0.5s;
-    transition: 0.4s ease-in-out;
+    /* transition: all 0.5s;
+    transition: 0.4s ease-in-out; */
     border-radius: 0px 0px 4px 4px;
     
 }
