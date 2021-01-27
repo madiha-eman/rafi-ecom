@@ -61,10 +61,10 @@ const useStyles = makeStyles((theme) => ({
     // display: 'block',
     opacity: '.7',
     background:'#F5FCEB',
-    background: 'linear-gradient(to bottom, #696969 74%, whitesmoke 70%)',
+    background: 'linear-gradient(to bottom, #55584D 74%, whitesmoke 70%)',
     boxShadow: '0 0 16px -1px rgba(0,0,0,.75)',
-    width:"100%",
-    height:'100%',
+    width:"65px",
+    height:'76px',
     border:'none',
     transition: '.1s ease-in-out',
    
@@ -144,6 +144,8 @@ export default function Rightsidebar() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+  
+  // The ref you want to attach
 
   return (
     <div className={classes.root}>
@@ -155,20 +157,20 @@ export default function Rightsidebar() {
         })} */}
       {/* > */}
  
-        <div style={{ position:'fixed', right: 0, marginTop:'20%',  height:'76px',}} className={clsx(open && classes.hide)} anchor="right">
+      <div style={{ position:'fixed', right: 0, marginTop:'20%',}} className={clsx(open && classes.hide)} anchor="right">
      
           <Button
             onClick={handleDrawerOpen}
             className={classes.hid}
             variant="permanent"
           >
-             <span className='no-of-products'>{totalQty} ITEMS
+             <span className='no-of-products'>{totalQty} ITEMS</span>
              <h5 className='price-of-products'> ৳ 
              <CountUp
               start={0}
               end={totalPrice}
               decimals={0} />
-               </h5></span>
+               </h5>
              
           </Button>
        

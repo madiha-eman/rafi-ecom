@@ -10,6 +10,9 @@ import { CartContext } from '../global/CartContext'
 import { Icon } from 'react-icons-kit'
 import {arrows_circle_plus} from 'react-icons-kit/linea/arrows_circle_plus'
 import {arrows_circle_minus} from 'react-icons-kit/linea/arrows_circle_minus'
+import {minus} from 'react-icons-kit/metrize/minus'
+import {plus} from 'react-icons-kit/metrize/plus'
+
 import '../css/Home.css'
 
 const useStyles = makeStyles((theme) => ({
@@ -92,19 +95,25 @@ export const Products = () => {
                 {/* </div>  */}
                 {/* </div> */}
                 <div class="middle">
-                  <div className={clsx(open && classes.hide)} onClick={() => dispatch({ type: 'ADD_TO_CART', id: product.ProductID, product })}>
-                    <h2 className='shopping-bag' onClick={() => setTitle(<> 
-                      <p className='p-bag'> ৳ {product.ProductPrice}
-                      {shoppingCart && shoppingCart.map(cart => (
-                        <div key={cart.ProductID}>
+                  <div className={clsx(open && classes.hide)}onClick={() => dispatch({ type: 'ADD_TO_CART', id: product.ProductID, product })}>
+                  <div className='shopping-bag0'>
+                 <h2 className='shopping-bag' onClick={() => setTitle(<> 
+                  {shoppingCart.length !== 0}
+                  {shoppingCart && shoppingCart.map(cart => (
+                  <div key={cart.ProductID}>
+                      <div className='p-bag0'>
+                      <p className='p-bag'> ৳ {cart.TotalProductPrice}
                         <div className='add-hvr'>
-                           <Icon icon={arrows_circle_minus} size={22} className='dec1' onClick={() => dispatch({ type: 'DEC', id: cart.ProductID, cart })} />
-                                  <div className='quantity'>{cart.qty}</div>
-                           <Icon icon={arrows_circle_plus} size={22} className='inc1' onClick={() => dispatch({ type: 'INC', id: cart.ProductID, cart })} /> 
+                           <Icon icon={minus} size={26} className='dec1' onClick={() => dispatch({ type: 'DEC', id: cart.ProductID, cart })} />
+                                  <div className='quantity-bag'>{cart.qty}</div>
+                           <Icon icon={plus} size={26} className='inc1' onClick={() => dispatch({ type: 'INC', id: cart.ProductID, cart })} /> 
                                </div>
-                               </div> ))} </p> <span className='p2-bag'>in bag</span> </>)}> <span  onClick={() => dispatch({ type: 'ADD_TO_CART', id: product.ProductID, product })} >{title}</span> </h2>
+                                </p> </div><span className='p2-bag'>in bag</span></div>))}</>)}> <span>{title}</span> </h2>
+                </div>
                   </div>
+                <div className='btn-hvr0'>
                   <button className='btn-hvr'><DetailsProduct /></button>
+                  </div>
                 </div>
               </div>
               <button className='addcart-btn' onClick={() => dispatch({ type: 'ADD_TO_CART', id: product.ProductID, product })}><a>ADD TO CART</a></button>

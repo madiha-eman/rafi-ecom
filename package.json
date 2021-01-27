@@ -16,6 +16,7 @@
     "firebase": "^8.2.2",
     "framer-motion": "^3.2.1",
     "get-google-fonts": "^1.2.2",
+    "odometer": "^0.4.8",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",
     "react-countup": "^4.3.3",
@@ -31,6 +32,7 @@
     "reactjs-popup": "^2.0.4",
     "redux": "^4.0.5",
     "styled-components": "^5.2.1",
+    "use-odometer": "0.0.4",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
