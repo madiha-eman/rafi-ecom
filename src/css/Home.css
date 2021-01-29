@@ -96,7 +96,7 @@ h1 {
 }
 
 .products-container .product-card {
-    position: relative;
+    /* position: relative; */
     width: 150px;
     height: auto;
     margin: 6px;
@@ -256,6 +256,7 @@ h1 {
     color: #fff;
     font-size: 28px;
     text-align: center;
+    cursor: pointer;
     height: 100px;
     /* font-weight: bold; */
     /* padding-top: 3px; */
